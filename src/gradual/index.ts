@@ -5,7 +5,7 @@ import { starbucks } from "./starbucks";
 import { strict } from "./strict";
 import { vercel } from "./vercel";
 
-export const presets = {
+export const gradual = {
     official,
     local,
     starbucks,

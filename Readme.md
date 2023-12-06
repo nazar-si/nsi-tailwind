@@ -1,45 +1,40 @@
 # Nazar Si tailwind presets
-This package contains several style presets for tailwind in a form:
-
-```
-colors: 
-    primary
-    secondary
-    error
-    gray
-font:
-    sans (default font)
-borderRadius
-```
+This package contains several style presets for tailwind. Different presets contain different classes and styles to use.
 
 For now there are following styles:
-* Official (tailwind site)
-* Nazar - personal theme 
-* Strict - for business 
-* Starbucks
-* Vercel
+* **Gradual** - all colors have ranges from 100 to 900 and 50, 950. `primary`, `secondary`, `error` and `gray` colors are present.
+  * **Official** - tailwind site
+  * **Nazar** - personal theme 
+  * **Strict** - for business 
+  * **Starbucks** - starbucks brand colors
+  * **Vercel** - Vercel-like black and white theme
+  * **Meta (TBA)** - Meta (aka. Facebook) styles  
+* **Special** - some special famous packs (*Not implemented yet*):
+  * **Daisy UI (TBA)** - default themes from Daisy Ui
+  * **Apple (TBA)** - styles commonly used in Apple IOS and MacOS themes
+  * **Windows (TBA)** -  styles commonly used in Windows 11 
 
 # Usage
 
 To use them, in your `tailwind.config.js` import style and set it as preset:
 ```js
-const {presets} = require('nsi-tailwind');
+const {gradual} = require('nsi-tailwind');
 
 module.exports = {
-    presets: [presets.strict], // [presets.starbucks], etc.
+    presets: [gradual.strict], // [gradual.starbucks], etc.
     ...
 } 
 ```
 or use required options in your theme config
 ```js
-const {presets} = require('nsi-tailwind');
+const {gradual} = require('nsi-tailwind');
 
 module.exports = {
     ...
     theme: {
         extend: {
             ...
-            primary: presets.official.theme.colors.primary,
+            primary: gradual.official.theme.colors.primary,
         },
     },
 } 
@@ -52,9 +47,10 @@ In order to use your colors in UI, use them as you would do with ordinary tailwi
 </div>
 ```
 
-For colors there is always a default option that corresponds for 500 brightness:
-```css 
-text-primary // equivalent to text-primary-500
-bg-secondary // equivalent to bg-secondary-500
-...
-```
+# Theme descriptions 
+
+## Gradual 
+TBA
+
+## Special 
+TBA

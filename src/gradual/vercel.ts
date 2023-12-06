@@ -36,8 +36,8 @@ export const vercel = {
                 DEFAULT: colors.rose['500'],
             },
             gray: {
-                ...colors.gray,
-                DEFAULT: colors.gray['500'],
+                ...colors.slate,
+                DEFAULT: colors.slate['500'],
             }
         }
     }

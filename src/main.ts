@@ -1,1 +1,1 @@
-export * from './presets';
+export * from './gradual';
