@@ -1,11 +1,15 @@
-import { darkOfficial } from "./dark-official";
+import { local } from "./local";
+import { nazar } from "./nazar";
 import { official } from "./official";
 import { starbucks } from "./starbucks";
 import { strict } from "./strict";
+import { vercel } from "./vercel";
 
 export const presets = {
     official,
-    darkOfficial,
+    local,
     starbucks,
     strict,
+    vercel,
+    nazar,
 };
