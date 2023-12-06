@@ -9,7 +9,8 @@ For now there are following styles:
   * **Starbucks** - starbucks brand colors
   * **Vercel** - Vercel-like black and white theme
   * **Meta (TBA)** - Meta (aka. Facebook) styles  
-* **Special** - some special famous packs (*Not implemented yet*):
+* **Special** - some special famous packs (*In progress*):
+  * **Minimalist** - themes of several colors 
   * **Daisy UI (TBA)** - default themes from Daisy Ui
   * **Apple (TBA)** - styles commonly used in Apple IOS and MacOS themes
   * **Windows (TBA)** -  styles commonly used in Windows 11 
@@ -50,7 +51,13 @@ In order to use your colors in UI, use them as you would do with ordinary tailwi
 # Theme descriptions 
 
 ## Gradual 
-TBA
+In all color packs there are four colors with all variants of brightness (from 50 to 950):
+```
+primary
+secondary
+error
+gray
+```
 
 ## Special 
 TBA
