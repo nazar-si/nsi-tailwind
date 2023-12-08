@@ -11,7 +11,7 @@ For now there are following styles:
   * **Vercel** - Vercel-like black and white theme
   * **Meta (TBA)** - Meta (aka. Facebook) styles  
 * **Special** - some special famous packs (*In progress*):
-  * **Minimalist (19 themes)** - themes of several colors 
+  * **Minimalist (21 themes)** - themes of several colors 
   * **Daisy UI (TBA)** - default themes from Daisy Ui
   * **Apple (TBA)** - styles commonly used in Apple IOS and MacOS themes
   * **Windows (TBA)** -  styles commonly used in Windows 11 
@@ -20,10 +20,10 @@ For now there are following styles:
 
 To use them, in your `tailwind.config.js` import style and set it as preset:
 ```js
-const {gradual} = require('nsi-tailwind');
+const {gradual, special} = require('nsi-tailwind');
 
 module.exports = {
-    presets: [gradual.strict], // [gradual.starbucks], etc.
+    presets: [gradual.strict], // [gradual.starbucks], [special.minimalist.orwell] etc.
     ...
 } 
 ```
@@ -63,6 +63,17 @@ gray
 ## Special 
 
 ### Minimalist
+
+```ts
+export {special} from 'nsi-tailwind';
+
+module.exports = {
+    presets: [special.minimalist.superuser], 
+    ...
+}
+
+
+```
 These theme contains only 6 colors:
 * back - background 
 * fore - foreground

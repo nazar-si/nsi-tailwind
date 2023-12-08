@@ -162,6 +162,22 @@ export const minimalist = {
         extra: '#f4eee4',
         error: '#f92aad' 
     }),    
+    abyss: unpack({
+        back: '#22092C',
+        fore: '#efc4d8',
+        main: '#F05941',
+        sub: '#BE3144',
+        extra: '#872341',
+        error: '#8c444f',
+    }),
+    breeze: unpack({
+        back: '#ECF4D6',
+        fore: '#265073',
+        main: '#2D9596',
+        sub: '#9AD0C2',
+        extra: '#64CCC5',
+        error: '#176B87',
+    }),
     _default: unpack({
         back: '#',
         fore: '#',
