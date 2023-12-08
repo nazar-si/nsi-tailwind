@@ -11,7 +11,7 @@ For now there are following styles:
   * **Vercel** - Vercel-like black and white theme
   * **Meta (TBA)** - Meta (aka. Facebook) styles  
 * **Special** - some special famous packs (*In progress*):
-  * **Minimalist** - themes of several colors 
+  * **Minimalist (19 themes)** - themes of several colors 
   * **Daisy UI (TBA)** - default themes from Daisy Ui
   * **Apple (TBA)** - styles commonly used in Apple IOS and MacOS themes
   * **Windows (TBA)** -  styles commonly used in Windows 11 
@@ -61,4 +61,21 @@ gray
 ```
 
 ## Special 
-TBA
+
+### Minimalist
+These theme contains only 6 colors:
+* back - background 
+* fore - foreground
+* main - main color 
+* sub - secondary color
+* extra - extra/accent color
+* error - error color 
+
+Each color may be used in class. For example:
+```html
+<div class='bg-back'>
+    <p class='text-fore'>
+        Hello, <span class='text-main'>World</span>!
+    <p>
+</div>
+```
