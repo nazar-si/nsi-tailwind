@@ -1,4 +1,5 @@
-# [Nazar Si tailwind presets](https://github.com/nazar-si/nsi-tailwind)
+# Nazar Si tailwind presets
+## [Github page](https://github.com/nazar-si/nsi-tailwind)
 This package contains several style presets for tailwind. Different presets contain different classes and styles to use.
 
 For now there are following styles:
