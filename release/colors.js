@@ -41,7 +41,7 @@ function processMinimalist(data) {
         const top = 70 * y + 16;
         ctx.fillRect(left, top, (32 * 3 + GAP * 4), (32 + GAP * 2));
         ctx.fillStyle = '#888';
-        ctx.fillText(key, left, top - 4);
+        ctx.fillText(key, left, top - 4, 32);
         ctx.fillStyle = palette.main;
         ctx.fillRect(left + GAP, top + GAP, 32, 32);
         ctx.fillStyle = palette.sub;
