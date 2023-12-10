@@ -90,3 +90,5 @@ Each color may be used in class. For example:
     <p>
 </div>
 ```
+
+![minimalist]('./release/colorsMinimalist.svg')

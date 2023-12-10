@@ -178,7 +178,7 @@ export const minimalist = {
         extra: '#64CCC5',
         error: '#176B87',
     }),
-    _default: unpack({
+    _template_: unpack({
         back: '#',
         fore: '#',
         main: '#',
