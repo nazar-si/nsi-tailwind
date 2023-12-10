@@ -91,4 +91,4 @@ Each color may be used in class. For example:
 </div>
 ```
 
-![Minimalist palettes](release/colorsMinimalist.svg)
+![Minimalist palettes](https://github.com/nazar-si/nsi-tailwind/blob/main/release/colorsMinimalist.svg)
