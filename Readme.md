@@ -91,4 +91,4 @@ Each color may be used in class. For example:
 </div>
 ```
 
-![minimalist](./release/colorsMinimalist.svg)
+![Minimalist palettes](release/colorsMinimalist.svg)
