@@ -3,6 +3,7 @@ import { nazar } from "./nazar";
 import { official } from "./official";
 import { starbucks } from "./starbucks";
 import { strict } from "./strict";
+import { tropical } from "./tropical";
 import { vercel } from "./vercel";
 
 export const gradual = {
@@ -12,4 +13,5 @@ export const gradual = {
     strict,
     vercel,
     nazar,
+    tropical
 };

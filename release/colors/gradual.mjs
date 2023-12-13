@@ -1,13 +1,6 @@
 import { readFile } from "node:fs/promises";
 import * as fs from "fs";
-import {gradual as gradualPalette} from '../../dist/main.cjs.js'
-const palettes = {
-    official: gradualPalette.official,
-    nazar: gradualPalette.nazar,
-    starbucks: gradualPalette.starbucks,
-    strict: gradualPalette.strict,
-    vercel: gradualPalette.vercel,
-};
+import {gradual as palettes} from '../../dist/main.cjs.js'
 import { html } from "satori-html";
 import satori from "satori";
 
@@ -41,7 +34,7 @@ function gradual(palette, name) {
 export async function processGradual() {
     const template = html(`
 <div class="gradual">
-${Object.keys(palettes).map(key=>{
+${Object.keys(palettes).filter(key=>key!=='local').map(key=>{
     if (key === '_template_') return '';
     const palette = palettes[key].theme.colors;
     return gradual(palette, key.at(0).toLocaleUpperCase() + key.slice(1))
@@ -58,7 +51,7 @@ ${Object.keys(palettes).map(key=>{
         font-size: 24px;
     }
     .gradual>div{
-        height: 200px;
+        height: 100px;
         display: flex;
         width: 100%;
         flex-direction: column;
@@ -67,9 +60,9 @@ ${Object.keys(palettes).map(key=>{
     .bar {
         display: flex;
         flex-direction: row;
-        height: 32px;
+        height: 12px;
         width: 100%;
-        margin-top: 8px;
+        margin-top: 4px;
         border-radius: 16px;
         overflow: hidden;
     }
@@ -85,7 +78,7 @@ ${Object.keys(palettes).map(key=>{
 `);
     const svg = await satori(template, {
         width: 700,
-        height: Math.ceil(Object.keys(palettes).length) * (200+16),
+        height: Math.ceil(Object.keys(palettes).length) * (100+16),
         fonts: [
         {
             name: "VictorMono",
