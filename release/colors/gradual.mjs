@@ -51,7 +51,7 @@ ${Object.keys(palettes).filter(key=>key!=='local').map(key=>{
         font-size: 24px;
     }
     .gradual>div{
-        height: 100px;
+        height: 120px;
         display: flex;
         width: 100%;
         flex-direction: column;
@@ -78,7 +78,7 @@ ${Object.keys(palettes).filter(key=>key!=='local').map(key=>{
 `);
     const svg = await satori(template, {
         width: 700,
-        height: Math.ceil(Object.keys(palettes).length) * (100+16),
+        height: Math.ceil(Object.keys(palettes).length) * (120+16),
         fonts: [
         {
             name: "VictorMono",

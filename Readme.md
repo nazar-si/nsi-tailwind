@@ -9,6 +9,7 @@ For now there are following styles:
   * **Strict** - for business 
   * **Starbucks** - starbucks brand colors
   * **Vercel** - Vercel-like black and white theme
+  * **Tropical** - Theme with warm colors
   * **Meta (TBA)** - Meta (aka. Facebook) styles  
 * **Special** - some special famous packs (*In progress*):
   * **Minimalist (21 themes)** - themes of several colors 
