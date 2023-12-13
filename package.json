@@ -1,6 +1,6 @@
 {
     "name": "nsi-tailwind",
-    "version": "0.0.28",
+    "version": "0.0.29",
     "exports": {
         ".": {
             "import": "./dist/main.es.js",
