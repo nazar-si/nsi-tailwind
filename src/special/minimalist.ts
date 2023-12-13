@@ -314,6 +314,62 @@ export const minimalist = {
         extra: "#796857",
         error: "#ff6f6b"
     }),
+    serenity: unpack({
+        back: "#EAE7DC",
+        fore: "#1F1F1F",
+        main: "#8E9AAF",
+        sub: "#B2B2B2",
+        extra: "#C0C5C1",
+        error: "#D33F49"
+    }),
+    oasis: unpack({
+        back: "#FEF6EB",
+        fore: "#2C3333",
+        main: "#3E885B",
+        sub: "#7C9A92",
+        extra: "#A5C1AD",
+        error: "#EF476F"
+    }),
+    eclipse: unpack({
+        back: "#2B2D2F",
+        fore: "#E5E5E5",
+        main: "#5762D5",
+        sub: "#706F6F",
+        extra: "#8D8C8C",
+        error: "#E84855"
+    }),
+    zenith: unpack({
+        back: "#2A293E",
+        fore: "#E0E1DD",
+        main: "#00A6ED",
+        sub: "#274472",
+        extra: "#4D7EA8",
+        error: "#FF5964"
+    }),
+    ember: unpack({
+        back: "#2C1A1D",
+        fore: "#F1EDEE",
+        main: "#DD7631",
+        sub: "#A64942",
+        extra: "#FFB585",
+        error: "#FF4242"
+    }),
+    verdant: unpack({
+        back: "#F1F9F5",
+        fore: "#334E36",
+        main: "#659B5E",
+        sub: "#A3BC9D",
+        extra: "#CDE4C0",
+        error: "#E63946"
+    }),
+    cosmos: unpack({
+        back: "#1B1B2F",
+        fore: "#E6E6E6",
+        main: "#3D2C8D",
+        sub: "#916BBF",
+        extra: "#C996CC",
+        error: "#EF767A"
+    }),
     _template_: unpack({
         back: '#',
         fore: '#',
