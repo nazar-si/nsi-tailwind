@@ -20,6 +20,7 @@ export const starbucks = {
                 '300': 'rgba(106 235 173 / <alpha-value>)',
                 '400': 'rgba(10 191 116 / <alpha-value>)',
                 '500': 'rgba(0 117 74 / <alpha-value>)',
+                '600': 'rgba(0 117 74 / <alpha-value>)',
                 '700': 'rgba(0 112 74 / <alpha-value>)',
                 '800': 'rgba(1 83 56 / <alpha-value>)',
                 '900': 'rgba(0 47 32 / <alpha-value>)',

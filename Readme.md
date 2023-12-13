@@ -60,6 +60,8 @@ error
 gray
 ```
 
+![Gradual palettes](https://github.com/nazar-si/nsi-tailwind/blob/main/release/colorsGradual.svg)
+
 ## Special 
 
 ### Minimalist
