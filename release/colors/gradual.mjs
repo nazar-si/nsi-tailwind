@@ -7,7 +7,7 @@ import satori from "satori";
 function gradual(palette, name) {
     return `\t<div>
         ${name}
-        <div class='bar'>
+        <div class='bar' style='margin-top: 4px'>
         ${
             Object.keys(palette.primary).filter(key=>key!=='DEFAULT').sort((a,b)=>Number(a) - Number(b)).map((key)=>"\t\t\t<div>" + key + "</div>").join('\n')
         }
@@ -78,7 +78,7 @@ ${Object.keys(palettes).filter(key=>key!=='local').map(key=>{
 `);
     const svg = await satori(template, {
         width: 700,
-        height: Math.ceil(Object.keys(palettes).length) * (120+16),
+        height: Math.ceil(Object.keys(palettes).length - 1) * (120+16),
         fonts: [
         {
             name: "VictorMono",
