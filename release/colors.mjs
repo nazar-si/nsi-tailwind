@@ -20,6 +20,7 @@ function minimalist(palette, name) {
 let data = fs.readFileSync('./Readme.md').toString();
 
 async function processMinimalist(data) {
+    const countInRow = 5;
     const template = html(`
 <div class="minimalist">
 ${Object.keys(palettes).map(key=>{
@@ -38,7 +39,7 @@ ${Object.keys(palettes).map(key=>{
         color: #888;
     }
     .minimalist>div{
-        height: 64px;
+        height: 80px;
         display: flex;
         flex-direction: column;
         margin-left: 8px;
@@ -49,6 +50,7 @@ ${Object.keys(palettes).map(key=>{
         flex-direction: row;
         padding: 8px;
         padding-left: 0;
+        margin-top: 4px;
         border-radius: 100px;
     }
     .color {
@@ -61,8 +63,8 @@ ${Object.keys(palettes).map(key=>{
 </style>
 `);
     const svg = await satori(template, {
-        width: 500,
-        height: Math.ceil(Object.keys(palettes).length / 3) * (64+8+16),
+        width: countInRow * 150,
+        height: Math.ceil(Object.keys(palettes).length / countInRow) * (80+8+16),
         fonts: [
         {
             name: "VictorMono",
