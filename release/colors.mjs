@@ -38,6 +38,7 @@ ${Object.keys(palettes).map(key=>{
         color: #888;
     }
     .minimalist>div{
+        height: 64px;
         display: flex;
         flex-direction: column;
         margin-left: 8px;
@@ -61,7 +62,7 @@ ${Object.keys(palettes).map(key=>{
 `);
     const svg = await satori(template, {
         width: 500,
-        height: Math.floor(Object.keys(palettes).length / 3) * (16 + 32 + 8 * 3 + 4),
+        height: Math.ceil(Object.keys(palettes).length / 3) * (64+8+16),
         fonts: [
         {
             name: "VictorMono",
