@@ -1,3 +1,4 @@
+import { interstellar } from "./interstellar";
 import { local } from "./local";
 import { nazar } from "./nazar";
 import { official } from "./official";
@@ -13,5 +14,6 @@ export const gradual = {
     strict,
     vercel,
     nazar,
-    tropical
+    tropical,
+    interstellar
 };
