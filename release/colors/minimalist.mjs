@@ -9,7 +9,7 @@ import satori from "satori";
 function minimalist(palette, name) {
     return `\t<div>
         ${name}
-        <div class='back' style='background: ${palette.back}'>
+        <div class='back' style='background: ${palette.back}; border-color: ${palette['back-100']}'>
             <div class='color' style='background: ${palette.main}'></div>
             <div class='color' style='background: ${palette.sub}'></div>
             <div class='color' style='background: ${palette.fore}'></div>
@@ -50,6 +50,7 @@ ${Object.keys(palettes).map(key=>{
         padding-left: 0;
         margin-top: 4px;
         border-radius: 100px;
+        border: 2px solid;
     }
     .color {
         display: flex;

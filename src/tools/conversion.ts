@@ -86,3 +86,13 @@ export function hsl2rgb(h: number, s: number, l: number) {
     return hsv2rgb(hsv.h, hsv.s, hsv.v);
 }
 
+
+const color2hex = (color: number) => {
+    const hexadecimal = Math.floor(color).toString(16);
+    return hexadecimal.length == 1 ? "0" + hexadecimal : hexadecimal;
+}
+
+export function rgb2hex(r:number, g:number, b:number) {
+    return `#${color2hex(r)}${color2hex(g)}${color2hex(b)}`;
+ }
+ 

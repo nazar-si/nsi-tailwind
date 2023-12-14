@@ -1,3 +1,5 @@
+import { hex2rgb, mixhsl, rgb2hsl } from "../tools";
+
 type Pack = {
     main: string,
     sub: string,
@@ -6,8 +8,60 @@ type Pack = {
     fore: string,
     back: string
 }
+type ExtendedPack = Pack & {
+    'back-100': string,
+    'back-200': string,
+    'fore-100': string,
+    'fore-200': string,
+    'main-fore': string,
+    'main-back': string,
+    'sub-fore': string,
+    'sub-back': string,
+    'extra-fore': string,
+    'extra-back': string,
+}
 
-const unpack = (pack: Pack)=>({theme:{colors:pack}});
+const unpack = (pack: Pack) : {theme: {colors: ExtendedPack}}=>{
+    const mRGB = hex2rgb(pack.main)!;
+    const main = rgb2hsl(mRGB.r, mRGB.g, mRGB.b);
+    const sRGB = hex2rgb(pack.sub)!;
+    const sub = rgb2hsl(sRGB.r, sRGB.g, sRGB.b);
+    const fRGB = hex2rgb(pack.fore)!;
+    const fore = rgb2hsl(fRGB.r, fRGB.g, fRGB.b);
+    const bRGB = hex2rgb(pack.back)!;
+    const back = rgb2hsl(bRGB.r, bRGB.g, bRGB.b);
+    const eRGB = hex2rgb(pack.extra)!;
+    const extra = rgb2hsl(eRGB.r, eRGB.g, eRGB.b);
+    
+    const back100 = mixhsl(back, fore, 0.1);
+    const back200 = mixhsl(back, fore, 0.2);
+    const fore100 = mixhsl(fore, back, 0.1);
+    const fore200 = mixhsl(fore, back, 0.2);
+    const mainfore = mixhsl(main, fore, 0.2);
+    const mainback = mixhsl(main, back, 0.2);
+    const subfore = mixhsl(sub, fore, 0.2);
+    const subback = mixhsl(sub, back, 0.2);
+    const extrafore = mixhsl(extra, fore, 0.2);
+    const extraback = mixhsl(extra, back, 0.2);
+
+    return {
+        theme: {
+            colors: {
+                ...pack,
+                'back-100': `hsl(${back.h} ${back.s}% ${back100.l}%)`,
+                'back-200': `hsl(${back.h} ${back.s}% ${back200.l}%)`,
+                'fore-100': `hsl(${fore.h} ${fore.s}% ${fore100.l}%)`,
+                'fore-200': `hsl(${fore.h} ${fore.s}% ${fore200.l}%)`,
+                'main-fore': `hsl(${main.h} ${mainfore.s}% ${mainfore.l}%)`,
+                'main-back': `hsl(${main.h} ${mainback.s}% ${mainback.l}%)`,
+                'sub-fore': `hsl(${sub.h} ${subfore.s}% ${subfore.l}%)`,
+                'sub-back': `hsl(${sub.h} ${subback.s}% ${subback.l}%)`,
+                'extra-fore': `hsl(${extra.h} ${extrafore.s}% ${extrafore.l}%)`,
+                'extra-back': `hsl(${extra.h} ${extraback.s}% ${extraback.l}%)`,
+            }
+        }
+    }
+};
 
 export const minimalist = {
     superuser: unpack({
@@ -370,12 +424,12 @@ export const minimalist = {
         extra: "#C996CC",
         error: "#EF767A"
     }),
-    _template_: unpack({
-        back: '#',
-        fore: '#',
-        main: '#',
-        sub: '#',
-        extra: '#',
-        error: '#',
-    }),
+    // _template_: unpack({
+    //     back: '#',
+    //     fore: '#',
+    //     main: '#',
+    //     sub: '#',
+    //     extra: '#',
+    //     error: '#',
+    // }),
 }
