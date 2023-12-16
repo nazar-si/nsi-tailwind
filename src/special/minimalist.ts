@@ -1,4 +1,4 @@
-import { hex2rgb, mixhsl, rgb2hsl } from "../tools";
+import { cssLCH, hex2rgb, mixhsl, mixlch, rgb2lch } from "../tools";
 
 type Pack = {
     main: string,
@@ -23,41 +23,41 @@ type ExtendedPack = Pack & {
 
 const unpack = (pack: Pack) : {theme: {colors: ExtendedPack}}=>{
     const mRGB = hex2rgb(pack.main)!;
-    const main = rgb2hsl(mRGB.r, mRGB.g, mRGB.b);
+    const main = rgb2lch(mRGB);
     const sRGB = hex2rgb(pack.sub)!;
-    const sub = rgb2hsl(sRGB.r, sRGB.g, sRGB.b);
+    const sub = rgb2lch(sRGB);
     const fRGB = hex2rgb(pack.fore)!;
-    const fore = rgb2hsl(fRGB.r, fRGB.g, fRGB.b);
+    const fore = rgb2lch(fRGB);
     const bRGB = hex2rgb(pack.back)!;
-    const back = rgb2hsl(bRGB.r, bRGB.g, bRGB.b);
+    const back = rgb2lch(bRGB);
     const eRGB = hex2rgb(pack.extra)!;
-    const extra = rgb2hsl(eRGB.r, eRGB.g, eRGB.b);
+    const extra = rgb2lch(eRGB);
     
-    const back100 = mixhsl(back, fore, 0.1);
-    const back200 = mixhsl(back, fore, 0.2);
-    const fore100 = mixhsl(fore, back, 0.1);
-    const fore200 = mixhsl(fore, back, 0.2);
-    const mainfore = mixhsl(main, fore, 0.2);
-    const mainback = mixhsl(main, back, 0.2);
-    const subfore = mixhsl(sub, fore, 0.2);
-    const subback = mixhsl(sub, back, 0.2);
-    const extrafore = mixhsl(extra, fore, 0.2);
-    const extraback = mixhsl(extra, back, 0.2);
+    const back100 = mixlch(back, fore, 0.1, true);
+    const back200 = mixlch(back, fore, 0.2, true);
+    const fore100 = mixlch(fore, back, 0.1, true);
+    const fore200 = mixlch(fore, back, 0.2, true);
+    const mainfore = mixlch(main, fore, 0.2, true);
+    const mainback = mixlch(main, back, 0.2, true);
+    const subfore = mixlch(sub, fore, 0.2, true);
+    const subback = mixlch(sub, back, 0.2, true);
+    const extrafore = mixlch(extra, fore, 0.2, true);
+    const extraback = mixlch(extra, back, 0.2, true);
 
     return {
         theme: {
             colors: {
                 ...pack,
-                'back-100': `hsl(${back.h} ${back.s}% ${back100.l}%)`,
-                'back-200': `hsl(${back.h} ${back.s}% ${back200.l}%)`,
-                'fore-100': `hsl(${fore.h} ${fore.s}% ${fore100.l}%)`,
-                'fore-200': `hsl(${fore.h} ${fore.s}% ${fore200.l}%)`,
-                'main-fore': `hsl(${main.h} ${mainfore.s}% ${mainfore.l}%)`,
-                'main-back': `hsl(${main.h} ${mainback.s}% ${mainback.l}%)`,
-                'sub-fore': `hsl(${sub.h} ${subfore.s}% ${subfore.l}%)`,
-                'sub-back': `hsl(${sub.h} ${subback.s}% ${subback.l}%)`,
-                'extra-fore': `hsl(${extra.h} ${extrafore.s}% ${extrafore.l}%)`,
-                'extra-back': `hsl(${extra.h} ${extraback.s}% ${extraback.l}%)`,
+                'back-100': cssLCH({...back100}), // h: back.h}),
+                'back-200': cssLCH({...back200}), // h: back.h}),
+                'fore-100': cssLCH({...fore100}), // h: fore.h}),
+                'fore-200': cssLCH({...fore200}), // h: fore.h}),
+                'main-fore': cssLCH({...mainfore}), // h: main.h}),
+                'main-back': cssLCH({...mainback}), // h: main.h}),
+                'sub-fore': cssLCH({...subfore}), // h: sub.h}),
+                'sub-back': cssLCH({...subback}), // h: sub.h}),
+                'extra-fore': cssLCH({...extrafore}), // h: extra.h}),
+                'extra-back': cssLCH({...extraback}), // h: extra.h}),
             }
         }
     }

@@ -1,8 +1,10 @@
-export function rgb2hsv(r: number, g: number, b: number) {
+import { HSL, HSV, RGB } from "./types";
+
+export function rgb2hsv(rgb: RGB): HSV {
     let h, s;
-    r /= 255;
-    g /= 255;
-    b /= 255;
+    let r = rgb.r / 255;
+    let g = rgb.g / 255;
+    let b = rgb.b / 255;
     const v = Math.max(r, g, b);
     let diff = v - Math.min(r, g, b);
     if (diff === 0) {
@@ -26,9 +28,10 @@ export function rgb2hsv(r: number, g: number, b: number) {
     };
 };
 
-export function hsv2rgb(h: number, s: number, v: number) {
-    s /= 100;
-    v /= 100;
+export function hsv2rgb(hsv: HSV): RGB {
+    let h = hsv.h;
+    let s = hsv.s / 100;
+    let v = hsv.v / 100;
     const c = v * s;
     const x = c * (1 - Math.abs((h / 60) % 2 - 1));
     const m = v - c;
@@ -49,7 +52,7 @@ export function hsv2rgb(h: number, s: number, v: number) {
     }
 }
 
-export function hex2rgb(hex: string) {
+export function hex2rgb(hex: string): RGB | null {
     let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result ? {
       r: parseInt(result[1], 16),
@@ -58,32 +61,32 @@ export function hex2rgb(hex: string) {
     } : null;
 }
 
-export function hsv2hsl(h: number, s:number, v: number) {
-    const l = v - v * s / 200;
+export function hsv2hsl(hsv: HSV): HSL {
+    const l = hsv.v - hsv.v * hsv.s / 200;
     return {
-        h,
-        s: l % 100 === 0 ? 0 : Math.round(1e4 * (v - l) / Math.min(l, 100 - l)) / 100,
+        h: hsv.h,
+        s: l % 100 === 0 ? 0 : Math.round(1e4 * (hsv.v - l) / Math.min(l, 100 - l)) / 100,
         l: Math.round(l * 100) / 100,
     }
 }
 
-export function hsl2hsv(h: number, s: number, l: number) {
-    const v =  l + s * Math.min(l, 100 - l) / 100;
+export function hsl2hsv(hsl: HSL): HSV {
+    const v =  hsl.l + hsl.s * Math.min(hsl.l, 100 - hsl.l) / 100;
     return {
-        h,
-        s: v === 0 ? 0 : Math.round(1e4 * (2 - 2 * l / v)) /100,
+        h: hsl.h,
+        s: v === 0 ? 0 : Math.round(1e4 * (2 - 2 * hsl.l / v)) /100,
         v: Math.round( v * 100) / 100,
     } 
 }
 
-export function rgb2hsl(r: number, g: number, b: number) {
-    const hsv = rgb2hsv(r, g, b);
-    return hsv2hsl(hsv.h, hsv.s, hsv.v);
+export function rgb2hsl(rgb: RGB): HSL {
+    const hsv = rgb2hsv(rgb);
+    return hsv2hsl(hsv);
 }
 
-export function hsl2rgb(h: number, s: number, l: number) {
-    const hsv = hsl2hsv(h, s, l);
-    return hsv2rgb(hsv.h, hsv.s, hsv.v);
+export function hsl2rgb(hsl: HSL): RGB {
+    const hsv = hsl2hsv(hsl);
+    return hsv2rgb(hsv);
 }
 
 
@@ -92,7 +95,7 @@ const color2hex = (color: number) => {
     return hexadecimal.length == 1 ? "0" + hexadecimal : hexadecimal;
 }
 
-export function rgb2hex(r:number, g:number, b:number) {
-    return `#${color2hex(r)}${color2hex(g)}${color2hex(b)}`;
+export function rgb2hex(rgb: RGB): string {
+    return `#${color2hex(rgb.r)}${color2hex(rgb.g)}${color2hex(rgb.b)}`;
  }
  
