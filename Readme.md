@@ -17,6 +17,8 @@ For now there are following styles:
   * **Daisy UI (TBA)** - default themes from Daisy Ui
   * **Apple (TBA)** - styles commonly used in Apple IOS and MacOS themes
   * **Windows (TBA)** -  styles commonly used in Windows 11 
+* **Utilities** - some of functions to help you create your own themes
+  * `tailwindScale` - helps you create tailwind color range for given color in 
 
 # Usage
 

@@ -1,4 +1,5 @@
-import { cssLCH, hex2rgb, mixhsl, mixlch, rgb2lch } from "../tools";
+import chroma from "chroma-js";
+import { mixlch } from "../tools";
 
 type Pack = {
     main: string,
@@ -22,16 +23,11 @@ type ExtendedPack = Pack & {
 }
 
 const unpack = (pack: Pack) : {theme: {colors: ExtendedPack}}=>{
-    const mRGB = hex2rgb(pack.main)!;
-    const main = rgb2lch(mRGB);
-    const sRGB = hex2rgb(pack.sub)!;
-    const sub = rgb2lch(sRGB);
-    const fRGB = hex2rgb(pack.fore)!;
-    const fore = rgb2lch(fRGB);
-    const bRGB = hex2rgb(pack.back)!;
-    const back = rgb2lch(bRGB);
-    const eRGB = hex2rgb(pack.extra)!;
-    const extra = rgb2lch(eRGB);
+    const main = chroma(pack.main);
+    const sub = chroma(pack.sub);
+    const fore = chroma(pack.fore);
+    const back = chroma(pack.back);
+    const extra = chroma(pack.extra);
     
     const back100 = mixlch(back, fore, 0.1, true);
     const back200 = mixlch(back, fore, 0.2, true);
@@ -48,16 +44,16 @@ const unpack = (pack: Pack) : {theme: {colors: ExtendedPack}}=>{
         theme: {
             colors: {
                 ...pack,
-                'back-100': cssLCH({...back100}), // h: back.h}),
-                'back-200': cssLCH({...back200}), // h: back.h}),
-                'fore-100': cssLCH({...fore100}), // h: fore.h}),
-                'fore-200': cssLCH({...fore200}), // h: fore.h}),
-                'main-fore': cssLCH({...mainfore}), // h: main.h}),
-                'main-back': cssLCH({...mainback}), // h: main.h}),
-                'sub-fore': cssLCH({...subfore}), // h: sub.h}),
-                'sub-back': cssLCH({...subback}), // h: sub.h}),
-                'extra-fore': cssLCH({...extrafore}), // h: extra.h}),
-                'extra-back': cssLCH({...extraback}), // h: extra.h}),
+                'back-100': back100.css(), // h: back.h}),
+                'back-200': back200.css(), // h: back.h}),
+                'fore-100': fore100.css(), // h: fore.h}),
+                'fore-200': fore200.css(), // h: fore.h}),
+                'main-fore': mainfore.css(), // h: main.h}),
+                'main-back': mainback.css(), // h: main.h}),
+                'sub-fore': subfore.css(), // h: sub.h}),
+                'sub-back': subback.css(), // h: sub.h}),
+                'extra-fore': extrafore.css(), // h: extra.h}),
+                'extra-back': extraback.css(), // h: extra.h}),
             }
         }
     }
