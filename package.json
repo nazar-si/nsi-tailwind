@@ -29,6 +29,7 @@
         "canvas": "^2.11.2",
         "canvas2svg": "^1.0.16",
         "canvg": "^4.0.1",
+        "color-parse": "^2.0.0",
         "daisyui": "^4.4.19",
         "dom-to-svg": "^0.12.2",
         "fabricjs": "^1.0.0",

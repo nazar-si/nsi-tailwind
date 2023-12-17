@@ -64,18 +64,18 @@ function xyz2lab(xyz: XYZ) : LAB {
     }
   
     const l = (116 * y) - 16
-    const a = 500 * (x - y)
-    const b = 200 * (y - z)
+    const A = 500 * (x - y)
+    const B = 200 * (y - z)
   
-    return { l, a, b }
+    return { l, A, B };
 }
 
 function lab2lch(lab: LAB): LCH {
-    const { l, a, b } = lab
+    const { l, A, B } = lab
   
-    const c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2))
+    const c = Math.sqrt(Math.pow(A, 2) + Math.pow(B, 2))
   
-    let h = Math.atan2(b, a) //Quadrant by signs
+    let h = Math.atan2(B, A) //Quadrant by signs
     if (h > 0) {
       h = (h / Math.PI) * 180
     } else {
@@ -88,18 +88,18 @@ function lab2lch(lab: LAB): LCH {
 export function lch2lab(lch: LCH): LAB {
     const { l, c, h } = lch
   
-    const a = Math.cos(h * 0.01745329251) * c
-    const b = Math.sin(h * 0.01745329251) * c
+    const A = Math.cos(h * 0.01745329251) * c
+    const B = Math.sin(h * 0.01745329251) * c;
   
-    return { l, a, b }
+    return { l, A, B };
 }
 
 function lab2xyz(lab: LAB): XYZ {
-    const { l, a, b } = lab
+    const { l, A, B } = lab
   
     let y = (l + 16) / 116
-    let x = a / 500 + y
-    let z = y - b / 200
+    let x = A / 500 + y
+    let z = y - B / 200
   
     if (Math.pow(y, 3) > 0.008856) {
       y = Math.pow(y, 3)

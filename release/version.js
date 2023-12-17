@@ -3,7 +3,7 @@ const fs = require('fs');
 /**
  * @type {'major' | 'minor' | 'patch'}
  */
-const type = 'minor';
+const type = 'patch';
 
 const package = fs.readFileSync('package.json')
 const json = JSON.parse(package);

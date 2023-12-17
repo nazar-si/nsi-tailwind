@@ -9,7 +9,8 @@ For now there are following styles:
   * **Strict** - for business 
   * **Starbucks** - starbucks brand colors
   * **Vercel** - Vercel-like black and white theme
-  * **Tropical** - Theme with warm colors
+  * **Tropical** 
+  * **Interstellar** 
   * **Meta (TBA)** - Meta (aka. Facebook) styles  
 * **Special** - some special famous packs (*In progress*):
   * **Minimalist (21 themes)** - themes of several colors 
@@ -51,17 +52,6 @@ In order to use your colors in UI, use them as you would do with ordinary tailwi
 ```
 
 # Theme descriptions 
-
-## Gradual 
-In all color packs there are four colors with all variants of brightness (from 50 to 950):
-```
-primary
-secondary
-error
-gray
-```
-
-![Gradual palettes](https://github.com/nazar-si/nsi-tailwind/blob/main/release/colorsGradual.svg)
 
 ## Special 
 
@@ -119,3 +109,14 @@ error
 ```
 
 ![Minimalist palettes](https://github.com/nazar-si/nsi-tailwind/blob/main/release/colorsMinimalist.svg)
+
+## Gradual 
+In all color packs there are four colors with all variants of brightness (from 50 to 950):
+```
+primary
+secondary
+error
+gray
+```
+
+![Gradual palettes](https://github.com/nazar-si/nsi-tailwind/blob/main/release/colorsGradual.svg)
