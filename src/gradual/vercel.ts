@@ -1,7 +1,6 @@
 import colors from 'tailwindcss/colors';
 
 export const vercel = {
-    theme: {
         colors: {
             primary: {
                 '950': colors.black,
@@ -40,5 +39,4 @@ export const vercel = {
                 DEFAULT: colors.slate['500'],
             }
         }
-    }
 }

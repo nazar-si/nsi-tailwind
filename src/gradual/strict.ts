@@ -1,7 +1,6 @@
 import colors from 'tailwindcss/colors';
 
 export const strict = {
-    theme: {
         colors: {
             primary: {
                 DEFAULT: '#3B5E7F', // Blue
@@ -66,5 +65,4 @@ export const strict = {
             'lg': '8px',
             'xl': '16px',
         },
-    },
 }

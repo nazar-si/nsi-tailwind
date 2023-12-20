@@ -1,7 +1,6 @@
 import colors from 'tailwindcss/colors';
 
 export const nazar = {
-    theme: {
         colors: {
             primary: {
                 ...colors.blue,
@@ -30,5 +29,4 @@ export const nazar = {
                 DEFAULT: 'rgb(113 113 122 / <alpha-value>)',
             }
         }
-    }
 }

@@ -36,7 +36,7 @@ export async function processGradual() {
 <div class="gradual">
 ${Object.keys(palettes).filter(key=>key!=='local').map(key=>{
     if (key === '_template_') return '';
-    const palette = palettes[key].theme.colors;
+    const palette = palettes[key].colors;
     return gradual(palette, key.at(0).toLocaleUpperCase() + key.slice(1))
 }).join('\n')}
 </div>

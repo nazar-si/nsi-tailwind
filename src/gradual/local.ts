@@ -1,5 +1,4 @@
 export const local = {
-    theme: {
         colors: {
             primary: {
                 '950': 'rgb(var(--color-primary-950) / <alpha-value>)',
@@ -58,5 +57,4 @@ export const local = {
                 DEFAULT: 'rgb(var(--color-gray-500) / <alpha-value>)',
             }
         }
-    }
 }

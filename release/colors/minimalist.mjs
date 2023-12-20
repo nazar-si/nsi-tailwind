@@ -23,7 +23,7 @@ export async function processMinimalist() {
 <div class="minimalist">
 ${Object.keys(palettes).map(key=>{
     if (key === '_template_') return '';
-    const palette = palettes[key].theme.colors;
+    const palette = palettes[key].colors;
     return minimalist(palette, key.at(0).toLocaleUpperCase() + key.slice(1))
 }).join('\n')}
 </div>

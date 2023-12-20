@@ -2,7 +2,6 @@ import colors from 'tailwindcss/colors';
 
 
 export const starbucks = {
-    theme: {
         fontFamily: {
             'sans': ['Proxima Nova', 'Helvetica Neue', 'Arial', 'sans-serif'],
         },
@@ -60,5 +59,4 @@ export const starbucks = {
                 DEFAULT: 'rgba(160 138 111 / <alpha-value>)',
             }
         }
-    }
 }

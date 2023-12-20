@@ -1,7 +1,6 @@
 import colors from 'tailwindcss/colors';
 
 export const tropical = {
-    theme: {
         colors: {
             primary: {
                 '950': '#B71C1C',
@@ -56,5 +55,4 @@ export const tropical = {
                 '50': '#FFFFFF',
             }
         }
-    }
 }

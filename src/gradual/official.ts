@@ -1,7 +1,6 @@
 import colors from 'tailwindcss/colors';
 
 export const official = {
-    theme: {
         colors: {
             primary: {
                 ...colors.indigo,
@@ -20,5 +19,4 @@ export const official = {
                 DEFAULT: colors.gray['500'],
             }
         }
-    }
 }

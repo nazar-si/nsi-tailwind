@@ -1,5 +1,4 @@
 export const interstellar = {
-    theme: {
         colors: { 
             primary: { 
                 '950': '#0B3D91', // Deep space blue 
@@ -54,5 +53,4 @@ export const interstellar = {
                 '50': '#FFFFFF', // Pure light 
             } 
         }
-    }
 }

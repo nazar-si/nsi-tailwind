@@ -22,7 +22,7 @@ type ExtendedPack = Pack & {
     'extra-back': string,
 }
 
-const unpack = (pack: Pack) : {theme: {colors: ExtendedPack}}=>{
+const unpack = (pack: Pack) : {colors: ExtendedPack} =>{
     const main = chroma(pack.main);
     const sub = chroma(pack.sub);
     const fore = chroma(pack.fore);
@@ -41,20 +41,18 @@ const unpack = (pack: Pack) : {theme: {colors: ExtendedPack}}=>{
     const extraback = mixlch(extra, back, 0.2, true);
 
     return {
-        theme: {
-            colors: {
-                ...pack,
-                'back-100': back100.css(), // h: back.h}),
-                'back-200': back200.css(), // h: back.h}),
-                'fore-100': fore100.css(), // h: fore.h}),
-                'fore-200': fore200.css(), // h: fore.h}),
-                'main-fore': mainfore.css(), // h: main.h}),
-                'main-back': mainback.css(), // h: main.h}),
-                'sub-fore': subfore.css(), // h: sub.h}),
-                'sub-back': subback.css(), // h: sub.h}),
-                'extra-fore': extrafore.css(), // h: extra.h}),
-                'extra-back': extraback.css(), // h: extra.h}),
-            }
+        colors: {
+            ...pack,
+            'back-100': back100.css(), // h: back.h}),
+            'back-200': back200.css(), // h: back.h}),
+            'fore-100': fore100.css(), // h: fore.h}),
+            'fore-200': fore200.css(), // h: fore.h}),
+            'main-fore': mainfore.css(), // h: main.h}),
+            'main-back': mainback.css(), // h: main.h}),
+            'sub-fore': subfore.css(), // h: sub.h}),
+            'sub-back': subback.css(), // h: sub.h}),
+            'extra-fore': extrafore.css(), // h: extra.h}),
+            'extra-back': extraback.css(), // h: extra.h}),
         }
     }
 };
