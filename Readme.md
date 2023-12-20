@@ -22,16 +22,19 @@ For now there are following styles:
 
 # Usage
 
-To use them, in your `tailwind.config.js` import style and set it as preset:
+To use them, in your `tailwind.config.js` import style and destructure it into your `theme.extends: {...}`:
 ```js
-const {gradual, special} = require('nsi-tailwind');
+const {gradual, special} = require('nsi-tailwind') 
 
 module.exports = {
-    presets: [gradual.strict], // [gradual.starbucks], [special.minimalist.orwell] etc.
-    ...
+    theme: {
+        extend: {
+            ...gradual.strict // gradual.starbucks, special.minimalist.orwell etc.
+        }
+    }
 } 
 ```
-or use required options in your theme config
+or if you want to use specific color or other theme, you may access it directly:
 ```js
 const {gradual} = require('nsi-tailwind');
 
@@ -63,8 +66,9 @@ In order to use your colors in UI, use them as you would do with ordinary tailwi
 export {special} from 'nsi-tailwind';
 
 module.exports = {
-    presets: [special.minimalist.superuser], 
-    ...
+    theme: {
+        extend: {...special.minimalist.superuser}, 
+    }
 }
 
 
