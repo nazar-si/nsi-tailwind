@@ -104,6 +104,16 @@ And for foreground there are also `-200` and `-100` variants. For example:
     <p>
 </div>
 ```
+In case you want to add a border or delimiter, you may want to use `line` color:
+```html
+<div class='bg-back-100 m-4 rounded-md border border-line'>
+    Content
+    <hr class='bg-line'/>
+    Content
+</div>
+```
+Line color is automatically generated from background and foreground colors to complement them in case line or delimiter is required in UI.
+
 To sum up, all the classes in each minimalist theme are:
 ```yaml
 main main-back main-fore
@@ -111,6 +121,7 @@ sub sub-back sub-fore
 extra extra-back extra-fore
 back back-100 back-200
 fore fore-100 fore-200
+line line-100
 error
 ```
 

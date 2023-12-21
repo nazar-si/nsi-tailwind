@@ -20,6 +20,8 @@ type ExtendedPack = Pack & {
     'sub-back': string,
     'extra-fore': string,
     'extra-back': string,
+    'line': string,
+    'line-100': string,
 }
 
 const unpack = (pack: Pack) : {colors: ExtendedPack} =>{
@@ -28,9 +30,14 @@ const unpack = (pack: Pack) : {colors: ExtendedPack} =>{
     const fore = chroma(pack.fore);
     const back = chroma(pack.back);
     const extra = chroma(pack.extra);
+
+    const white = chroma('white')
+    const light = fore.get('lch.l') < back.get('lch.l');
     
-    const back100 = mixlch(back, fore, 0.1, true);
-    const back200 = mixlch(back, fore, 0.2, true);
+    const back100 = mixlch(back, light ? white : fore, 0.1 * (light ? 3 : 1), true);
+    const back200 = mixlch(back, light ? white : fore, 0.2 * (light ? 3 : 1), true);
+    const line = light ? mixlch(back, fore, 0.2, true) : back200;
+    const line100 = light ? mixlch(back, fore, 0.1, true) : back100;
     const fore100 = mixlch(fore, back, 0.1, true);
     const fore200 = mixlch(fore, back, 0.2, true);
     const mainfore = mixlch(main, fore, 0.2, true);
@@ -53,6 +60,8 @@ const unpack = (pack: Pack) : {colors: ExtendedPack} =>{
             'sub-back': subback.css(), // h: sub.h}),
             'extra-fore': extrafore.css(), // h: extra.h}),
             'extra-back': extraback.css(), // h: extra.h}),
+            'line': line.css(),
+            'line-100': line100.css(),
         }
     }
 };
@@ -268,11 +277,11 @@ export const minimalist = {
     }),
     neon: unpack({
         back: "#212121",
-        fore: "#b4e7f8",
-        main: "#4bf3ff",
-        sub: "#edbfbf",
-        extra: "#8ae1fc",
-        error: "#ff89bd"
+        fore: "#d4e7f8",
+        main: "#30d3ff",
+        sub: "#ff7a4f",
+        extra: "#f860df",
+        error: "#ff79bd"
     }),
     mystic: unpack({
         back: "#2f2057",

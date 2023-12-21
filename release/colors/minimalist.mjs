@@ -9,7 +9,7 @@ import satori from "satori";
 function minimalist(palette, name) {
     return `\t<div>
         ${name}
-        <div class='back' style='background: ${palette.back}; border-color: ${palette['back-100']}'>
+        <div class='back' style='background: ${palette.back}; border-color: ${palette['line-100']}'>
             <div class='color' style='background: ${palette.main}; border-color: ${palette['main-fore']}'></div>
             <div class='color' style='background: ${palette.sub} ; border-color: ${palette['sub-fore']}'></div>
             <div class='color' style='background: ${palette.fore}; border-color: ${palette['fore-200']}'></div>
